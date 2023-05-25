@@ -1,0 +1,60 @@
+{{ title }} 
+
+<br>
+<br>
+
+{{ 2 + 4 }}
+
+<br>
+<br>
+
+ <p [style.color] = "culoare">
+  {{ descriere }}
+</p>
+
+<br>
+<br>
+
+<img src="{{ imgSrc }}" alt="" style="max-width: 300px;">
+<img [src]=" imgSrc2 " alt="" style="max-width: 169px;">
+
+<br>
+<br>
+
+<button (click)="showImg()" id="showimg"> Toggle image </button>
+<button (click)="showImg2()" id="showimg"> Toggle image 2 </button>
+
+<br>
+<br>
+
+<button (click)= " nr = nr + 1 "> Creste valoarea cu 1 </button>
+<button (click)= " nr = nr - 1 "> Scade valoarea cu 1 </button>
+<p [ngClass]="nr == 0? 'black': nr >=1? 'green': 'myClass'"> Valoarea lui nr este {{ nr }} </p>
+
+<br>
+<br>
+
+<form action="" method="post">
+  <input [(ngModel)]= "valoare" type="text" name="nume" id="nume" (input)="inputCount()">
+
+  {{ valoare}}
+</form>
+
+<br>
+<br>
+
+<h1>{{ persoana.nume }} {{persoana.prenume}} </h1>
+
+<br>
+<br>
+
+<h2>Eroi</h2>
+<p>Eroii mei preferati sunt</p>
+<ul>
+  <li *ngFor=" let erou of eroi">
+    
+    <span *ngIf="erou.id == 2"> {{erou.name}}</span>
+
+  </li>
+</ul>
+<router-outlet></router-outlet>
