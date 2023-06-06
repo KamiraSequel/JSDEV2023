@@ -1,19 +1,40 @@
-import { HtmlParser } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { CommonModule } from '@angular/common';
+import { ProfilComponent } from './profil/profil.component';
 
-//const routes: Routes = [];
 const routes: Routes = [
-  { path: 'first-angularionkokonutty', component: HomeComponent },
-  { path: 'mykokonuttoadmin-angular', component: AdminComponent },
+  { 
+    path: 'prima-kokonuttypagina', 
+    component: HomeComponent,
+    data: {
+      title: 'Home',
+      description: 'prima-pagina'
+    } 
+  },
+  { 
+    path: 'adminmynuttykoko', 
+    component: AdminComponent,
+    data: {
+      title: 'Admin',
+      description: 'myadmin'
+    } 
+  },
+  { 
+    path: 'profil/:id', 
+    component:ProfilComponent,
+    data: {
+      title: 'Profil user',
+      description: 'Profil user info'
+    } 
+  },
+  { path: '**', component: HomeComponent },  // Wildcard route for a 404 page
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule,RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
