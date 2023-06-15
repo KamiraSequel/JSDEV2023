@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Autor from './pages/Autor';
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Blogs from "./pages/Blog";
@@ -10,6 +11,7 @@ import './index.css';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
+import Articole from './pages/Articole';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +20,8 @@ root.render(
   <Routes>
       <Route path="/" element={<Layout />}>
       <Route index element={<App />} />
+      <Route path= "/articole" element={<Articole />} />
+      <Route parth= "/autor" element={<Autor />} />
       <Route path="/home" element={<Home />} />
       <Route path="blogs" element={<Blogs />} />
       <Route path="contact" element={<Contact />} />
