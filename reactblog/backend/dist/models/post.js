@@ -16,6 +16,7 @@ const findAll = (callback) => {
                 id: row.id,
                 titlu: row.titlu,
                 continut: row.continut,
+                poza: row.poza,
                 categorie_id: row.categorie_id,
                 user_id: row.user_id,
                 dataadaugare: row.dataadaugare,
@@ -57,10 +58,10 @@ const findOne = (postId, callback) => {
             id: row.id,
             titlu: row.titlu,
             continut: row.continut,
+            poza: row.poza,
             categorie_id: row.categorie_id,
             user_id: row.user_id,
             dataadaugare: row.dataadaugare,
-            poza: row.poza,
         };
         callback(null, post);
     });
@@ -68,10 +69,10 @@ const findOne = (postId, callback) => {
 exports.findOne = findOne;
 // create post
 const addPost = (post, callback) => {
-    const queryString = "INSERT INTO posts (titlu, continut, categorie_id, user_id) VALUES (?, ?, ?, ?)";
+    const queryString = "INSERT INTO posts (titlu, continut, poza, categorie_id, user_id) VALUES (?, ?, ?, ?)";
     console.log(post);
     try {
-        let sqldeb = db_1.db.query(queryString, [post.titlu, post.continut, post.categorie_id, post.user_id], (err, result) => {
+        let sqldeb = db_1.db.query(queryString, [post.titlu, post.continut, post.poza, post.categorie_id, post.user_id], (err, result) => {
             if (err) {
                 callback(err);
             }

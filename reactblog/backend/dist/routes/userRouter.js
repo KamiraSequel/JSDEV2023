@@ -146,3 +146,9 @@ userRouter.post("/veifyLogin", jsonParser, (req, res) => __awaiter(void 0, void 
         });
     });
 }));
+userRouter.post("/logout", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    return res.status(200).json({
+        accessToken: null,
+        message: "User has been logged out."
+    });
+}));

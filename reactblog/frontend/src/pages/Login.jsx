@@ -19,17 +19,12 @@ export default function Login() {
       .required("Camp obligatoriu!")
       .matches(
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
-        "Must Contain min 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character",
-
-        .password: Yup.string()
-        .password("Parola invalida!")
-        .required("Camp obligatoriu!"),
-
+        "Must Contain min 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
       ),
   });
 
   const [formData, setFormData] = useState({
-    email: "", parola: ""
+     email: "", parola: ""
   });
   const [err, setError] = useState(null);
   const handleInputChange = (event) => {
@@ -72,6 +67,7 @@ export default function Login() {
                 validationSchema={validationSchema}
               >
                 <Form>
+
                   <FormGroup>
                     <label htmlFor="email">Adresa de email</label>
                     <Field
@@ -116,7 +112,7 @@ export default function Login() {
                     </Button>
                   </FormGroup>
                   <FormGroup>
-                    <div class="w-100 text-md-right">
+                    <div className="w-100 text-md-right">
                       <Link to="/myregister" className="nav-link login">
                         Daca nu ai cont: Register
                       </Link>

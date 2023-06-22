@@ -1,9 +1,4 @@
-export interface BasicPost{
-    id:number,
-}
-
-
-export interface Post extends BasicPost  {
+export interface Post  {
     id:number,
     titlu: string,
     continut: string,
