@@ -30,17 +30,19 @@ export default function Home() {
    <div className="container">
     <div className="row mt-4">
       <h1>Ultimele articole</h1>
+    {posts.map(data =>
       <div className="col">
         <div className="card mb-4">
             <a href="#!"><img className="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
             <div className="card-body">
                 <div className="small text-muted">January 1, 2023</div>
-                <h2 className="card-title h4">Post Title</h2>
-                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                <h2 className="card-title h4">{data.titlu}</h2>
+                <p className="card-text"> {data.continut} </p>
                 <a className="btn btn-primary" href="#!">Read more →</a>
             </div>
         </div>
       </div>
+    )}
     </div>                              
    </div>
    </>
